@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048391AE2008A2A7007693D9 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048391AD2008A2A7007693D9 /* DateManager.swift */; };
+		048391B02008A2F5007693D9 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048391AF2008A2F5007693D9 /* CalendarCell.swift */; };
 		04D7343C2003964F00A7DE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7343B2003964F00A7DE93 /* AppDelegate.swift */; };
 		04D7343E2003964F00A7DE93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7343D2003964F00A7DE93 /* ViewController.swift */; };
 		04D734412003964F00A7DE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D7343F2003964F00A7DE93 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048391AD2008A2A7007693D9 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		048391AF2008A2F5007693D9 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		04D734382003964F00A7DE93 /* calender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7343B2003964F00A7DE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D7343D2003964F00A7DE93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				04D734472003964F00A7DE93 /* LaunchScreen.storyboard */,
 				04D7344A2003964F00A7DE93 /* Info.plist */,
 				04D734422003964F00A7DE93 /* calender.xcdatamodeld */,
+				048391AD2008A2A7007693D9 /* DateManager.swift */,
+				048391AF2008A2F5007693D9 /* CalendarCell.swift */,
 			);
 			path = calender;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048391B02008A2F5007693D9 /* CalendarCell.swift in Sources */,
+				048391AE2008A2A7007693D9 /* DateManager.swift in Sources */,
 				04D734442003964F00A7DE93 /* calender.xcdatamodeld in Sources */,
 				04D7343E2003964F00A7DE93 /* ViewController.swift in Sources */,
 				04D7343C2003964F00A7DE93 /* AppDelegate.swift in Sources */,
@@ -433,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RWL9BWXDB;
 				INFOPLIST_FILE = calender/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.default.calender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RWL9BWXDB;
 				INFOPLIST_FILE = calender/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.default.calender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
