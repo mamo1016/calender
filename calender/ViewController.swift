@@ -5,6 +5,7 @@ class ViewController: UIViewController ,UICollectionViewDataSource,UICollectionV
     let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     let numOfDays = 7       //1週間の日数
     let cellMargin : CGFloat = 2.0  //セルのマージン。セルのアイテムのマージンも別にあって紛らわしい。アイテムのマージンはゼロに設定し直してる
+    var monthArray: [Int] = []
     
     //OUTLET
     @IBOutlet weak var calenderCollectionView: UICollectionView!
@@ -18,6 +19,10 @@ class ViewController: UIViewController ,UICollectionViewDataSource,UICollectionV
         calenderCollectionView.dataSource = self
         
         headerTitle.text = dateManager.CalendarHeader()
+        for i in 2..<13 {
+            let monthRange = dateManager.rangeOfMonth(number: i)
+            monthArray.append(monthRange)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +46,9 @@ class ViewController: UIViewController ,UICollectionViewDataSource,UICollectionV
         if(section == 0){   //section:0は曜日を表示
             return numOfDays
         }else{
-            return dateManager.daysAcquisition()       //section:1は日付を表示 　※セルの数は始点から終点までの日数
+//            return dateManager.daysAcquisition()       //section:1は日付を表示 　※セルの数は始点から終点までの日数
+            dateManager.daysAcquisition()
+            return 365
         }
     }
     
@@ -65,7 +72,21 @@ class ViewController: UIViewController ,UICollectionViewDataSource,UICollectionV
     
     //セルをクリックしたら呼ばれる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Num：\(indexPath.row) Section:\(indexPath.section)")
+　        print("Num：\(indexPath.row) Section:\(indexPath.section)")
+        var displayNum: Int = 0
+        if indexPath.row > monthArray[0] + monthArray[1] {
+            displayNum = indexPath.row - monthArray[0] - monthArray[1] - 3
+        }
+        if indexPath.row < 4{//2月
+            displayNum = indexPath.row + monthArray[0] - 3
+        }else if indexPath.row < monthArray[1] + 4{//3月
+            displayNum = indexPath.row - 3
+        }else if indexPath.row < monthArray[2] + monthArray[1] + 4{//4月
+            displayNum = indexPath.row - monthArray[1] - 3
+        }else if indexPath.row < monthArray[3] + monthArray[2] + monthArray[1] + 4{
+            displayNum = indexPath.row - monthArray[2] - monthArray[1] - 3
+        }
+        print(displayNum)
     }
     /*
      
